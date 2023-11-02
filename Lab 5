@@ -1,0 +1,22 @@
+def to_pig_latin(sentence):
+    words = sentence.split()  # Step 2: Divide the input into individual words.
+    result = []
+
+    for word in words:
+        # Step 4: For one-letter words, just add the ending.
+        if len(word) == 1:
+            pig_latin_word = word + "ay"
+        else:
+            # Step 5: For words with more than one letter, change the order and add the ending.
+            pig_latin_word = word[1:] + word[0] + "ay"
+        
+        result.append(pig_latin_word)  # Step 6: Add the adapted word to the result.
+
+    # Step 8: Return the Result
+    return ' '.join(result)
+
+# Step 9: Call the function and display the result.
+english_sentence = "I slept most of the night"
+pig_latin_sentence = to_pig_latin(english_sentence)
+print("English:", english_sentence)
+print("Pig Latin:", pig_latin_sentence)
